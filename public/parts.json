@@ -11,7 +11,7 @@
     },
     {
         "_id": 2,
-        "name": "AMD Motherboard",
+        "name": "Motherboard",
         "image": "https://i.ibb.co/s6JzP0v/part-13.jpg",
         "body": "This  Motherboard supports PCIe Gen3 x4 Ultra M.2 interface pushes data transfer speeds up to 32Gb/s. In addition, it also supports SATA3 6Gb/s M.2 modules, and is compatible with ASRock’s U.2 Kit for installing some of the world’s fastest U.2 PCIe Gen3 x4 SSDs.",
         "price": "18,999",
@@ -41,7 +41,7 @@
     },
     {
         "_id": 5,
-        "name": "HDD Seagate 4Tb",
+        "name": "HDD 4Tb",
         "image": "https://i.ibb.co/4ZJxWKr/part-11.jpg",
         "body": "In terms of gigabytes on the dollar, it’s the best-value hard drive out there. The spin speeds of 7,200 RPM ensure fast enough performance for most purposes, certainly enough to be a time saver..",
         "price": "10,200",
@@ -51,7 +51,7 @@
     },
     {
         "_id": 6,
-        "name": "Processor AMD Ryzen",
+        "name": "Processor",
         "image": "https://i.ibb.co/dGmmyBn/part-9.jpg",
         "body": " Get the high-speed gaming performance of the world’s best desktop processor. AMD Ryzen™ processors have all the best features to keep you in the game.Whether gaming or creating, AMD Ryzen™ processors offer ultimate performance.",
         "price": "51,000",

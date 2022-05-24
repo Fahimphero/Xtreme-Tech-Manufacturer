@@ -3,9 +3,13 @@ import { Carousel } from 'react-bootstrap';
 import Banner1 from '../../Images/banner 1.png'
 import Banner2 from '../../Images/banner 2.jpg'
 import Banner3 from '../../Images/banner 3.png'
+import Reviews from '../Bonus/Reviews/Reviews';
+import Summary from '../Bonus/Summary/Summary';
+import Form from '../Bonus/Form/Form';
 import Part from '../Part/Part';
 
 import './Home.css'
+import BestTeam from '../Bonus/BestTeam/BestTeam';
 
 const Home = () => {
     return (
@@ -50,7 +54,10 @@ const Home = () => {
 
 
             <Part></Part>
-
+            <Summary></Summary>
+            <Reviews></Reviews>
+            <Form></Form>
+            <BestTeam></BestTeam>
         </div>
 
 
