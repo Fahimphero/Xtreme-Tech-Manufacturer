@@ -3,8 +3,10 @@ import Parts from '../../Parts/Parts';
 
 const Part = () => {
     const [parts, setParts] = useState([]);
+
+
     useEffect(() => {
-        fetch('parts.json')
+        fetch('http://localhost:5000/part')
             .then(res => res.json())
             .then(data => setParts(data))
     }, [])

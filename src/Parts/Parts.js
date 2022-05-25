@@ -6,13 +6,20 @@ import part4 from '../Images/Parts/part 7.jpg'
 import part5 from '../Images/Parts/part 11.jpg'
 import part6 from '../Images/Parts/part 9.jpg'
 import './parts.css'
+import { useNavigate } from 'react-router-dom';
 
 const Parts = ({ part }) => {
-    const { image, name, body, price, company, minimumQuantity, availableQuantity } = part;
+    const { _id, image, name, body, price, minimumQuantity, availableQuantity } = part;
+    const navigate = useNavigate();
+    const handlePurchase = (id) => {
+
+        navigate(`/purchase/${id}`)
+    }
+
     return (
 
         <div className="col col-lg-4">
-            <div className="card mb-3" style={{ border: '1px solid blue' }}>
+            <div className="card mb-3 hover-border" >
                 <div className="row g-0">
 
                     <div className="col-md-5">
@@ -35,7 +42,7 @@ const Parts = ({ part }) => {
                                 <h6 className="card-title fw-bold">Price: <span className='text-primary fw-bold'>${price}</span></h6>
                             </div>
                             <div className="col-md-6">
-                                <button className='btn px-4 button text-light '>Buy</button>
+                                <button onClick={() => handlePurchase(_id)} className='btn px-4 button text-light '>Buy</button>
                             </div>
                         </div>
                     </div>

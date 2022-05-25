@@ -6,8 +6,7 @@
         "body": " The best PC case is more than just a box to throw all your gear in; it's about looks too. You want your PC case to make a statement on your desk, or at least look nicely subdued.",
         "price": "10,999",
         "minimumQuantity": 50,
-        "availableQuantity": 300,
-        "company": "Ford Motor Company"
+        "availableQuantity": 300
     },
     {
         "_id": 2,
@@ -16,8 +15,7 @@
         "body": "This  Motherboard supports PCIe Gen3 x4 Ultra M.2 interface pushes data transfer speeds up to 32Gb/s. In addition, it also supports SATA3 6Gb/s M.2 modules, and is compatible with ASRock’s U.2 Kit for installing some of the world’s fastest U.2 PCIe Gen3 x4 SSDs.",
         "price": "18,999",
         "minimumQuantity": 100,
-        "availableQuantity": 500,
-        "company": "Ford Motor Company"
+        "availableQuantity": 500
     },
     {
         "_id": 3,
@@ -26,8 +24,7 @@
         "body": "Crucial DDR5 Desktop Memory can empower your computer to transfer 50% more data than DDR4 at launch, resulting in faster load times, file transfers, downloads, refresh rates and less lag time.",
         "price": "10,999",
         "minimumQuantity": 200,
-        "availableQuantity": 700,
-        "company": "Ford Motor Company"
+        "availableQuantity": 700
     },
     {
         "_id": 4,
@@ -36,8 +33,7 @@
         "body": "Immersive Gaming Performance. Make every moment count. Escape reality and reign over your virtual worlds. These gaming monitors have the speed, specs, and special features you crave. Accurate color performance & professional appointments empower your creative success.",
         "price": "45,999",
         "minimumQuantity": 150,
-        "availableQuantity": 500,
-        "company": "Ford Motor Company"
+        "availableQuantity": 500
     },
     {
         "_id": 5,
@@ -46,8 +42,7 @@
         "body": "In terms of gigabytes on the dollar, it’s the best-value hard drive out there. The spin speeds of 7,200 RPM ensure fast enough performance for most purposes, certainly enough to be a time saver..",
         "price": "10,200",
         "minimumQuantity": 100,
-        "availableQuantity": 700,
-        "company": "Ford Motor Company"
+        "availableQuantity": 700
     },
     {
         "_id": 6,
@@ -56,7 +51,6 @@
         "body": " Get the high-speed gaming performance of the world’s best desktop processor. AMD Ryzen™ processors have all the best features to keep you in the game.Whether gaming or creating, AMD Ryzen™ processors offer ultimate performance.",
         "price": "51,000",
         "minimumQuantity": 100,
-        "availableQuantity": 600,
-        "company": "Ford Motor Company"
+        "availableQuantity": 600
     }
 ]
