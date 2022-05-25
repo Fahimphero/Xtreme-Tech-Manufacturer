@@ -5,14 +5,20 @@ import { getAuth } from 'firebase/auth';
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+
+
+
 const firebaseConfig = {
-    apiKey: "AIzaSyDiIcgv1irSNvcJaI65VXQAZTDwouWXE2o",
-    authDomain: "xtreme-tech.firebaseapp.com",
-    projectId: "xtreme-tech",
-    storageBucket: "xtreme-tech.appspot.com",
-    messagingSenderId: "275458664685",
-    appId: "1:275458664685:web:8b19a8ce706194ba22c4e4"
+    apiKey: process.env.REACT_APP_apiKey,
+    authDomain: process.env.REACT_APP_authDomain,
+    projectId: process.env.REACT_APP_projectId,
+    storageBucket: process.env.REACT_APP_storageBucket,
+    messagingSenderId: process.env.REACT_APP_messagingSenderId,
+    appId: process.env.REACT_APP_appId
+
+
 };
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
