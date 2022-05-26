@@ -23,33 +23,46 @@ const Purchase = () => {
 
     const { _id, image, name, body, price, minimumQuantity, availableQuantity } = part;
 
+    let primaryQuantity = minimumQuantity;
+    console.log(primaryQuantity);
 
     const handleQuantity = (event) => {
 
         setQuantity(event.target.value)
+        console.log(event.target.value)
     }
 
-    if (quantity > availableQuantity) {
-        toast.error('You can not increase more')
-    }
+
 
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
 
-        Object.assign(data, { quantity: quantity })
-        console.log(data)
 
 
 
-        axios.post('http://localhost:5000/clientparts', data)
-            .then(function (response) {
-                console.log(response);
-                toast('Added Successfully')
-            })
 
-            .catch(function (error) {
-                console.log(error);
-            });
+
+        if (quantity > +availableQuantity) {
+            toast.error('You can not increase more')
+        }
+
+        else {
+            if (!quantity) {
+                setQuantity(primaryQuantity)
+            }
+            Object.assign(data, { quantity: +quantity, name: name })
+            console.log(data)
+            axios.post('http://localhost:5000/clientparts', data)
+                .then(function (response) {
+                    console.log(response);
+                    toast('Added Successfully')
+                })
+
+                .catch(function (error) {
+                    console.log(error);
+                });
+        }
+
     };
     return (
         <div className='bg-dark pb-5'>
@@ -104,34 +117,23 @@ const Purchase = () => {
                                 <textarea placeholder='Address' {...register("body", { required: true, maxLength: 70 })} cols="30" rows="5" />
 
 
-                                <input typeof='number' placeholder='Phone Number' {...register("price", { required: true })} />
+                                <input typeof='number' placeholder='Phone Number' {...register("phoneNumber", { required: true })} />
 
                                 {/* <input typeof='number' placeholder='Quantity'{...register("quantity", { required: true })} /> */}
 
                                 {
-                                    (quantity <= availableQuantity) ? <input onChange={handleQuantity} type="number" defaultValue={minimumQuantity} name="restock" id="" /> :
-
-                                        <input onChange={handleQuantity} type="number"
+                                    (quantity <= +availableQuantity) ? <input onChange={handleQuantity} type="number" defaultValue={minimumQuantity} name="restock" id="" /> :
+                                        <input onChange={handleQuantity} typeof='number' disabled readOnly
                                             value={availableQuantity}
                                             step={availableQuantity} name="restock" id="" />
                                 }
 
 
-                                {/* <input onChange={handleQuantity} type="number" {...register("quantity", { required: true })} name="quantity" id="" placeholder='Quantity' /> */}
-
-                                {/* <input placeholder='Company Name' {...register("company", { required: true })} /> */}
-
 
                                 <input className='text-light btn btn-dark' type="submit" value="Purchase" />
 
                             </form>
-                            {/* <div className=' d-flex justify-content-center mb-4'>
-                        <div className='px-4 pt-4'>
-                            <label htmlFor="exampleInputEmail1" className="form-label fs-5 text-light">Change Quantity</label><br />
-                            <input onChange={getInputValue} type="number" name="restock" id="" />
-                            <button className='btn btn-danger' onClick={() => handleQuantity(product.quantity)} type="submit"  >Submit</button>
-                        </div>
-                    </div> */}
+
                         </div>
                     </div>
                 </div>
