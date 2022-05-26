@@ -13,9 +13,9 @@ const Part = () => {
             .then(data => setParts(data))
     }, [])
 
-    // if (parts.length == 0) {
-    //     return <Loading></Loading>
-    // }
+    if (parts.length == 0) {
+        return <Loading></Loading>
+    }
 
     return (
         <div className="container mt-5">
