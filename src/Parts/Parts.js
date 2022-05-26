@@ -7,6 +7,7 @@ import part5 from '../Images/Parts/part 11.jpg'
 import part6 from '../Images/Parts/part 9.jpg'
 import './parts.css'
 import { useNavigate } from 'react-router-dom';
+import Loading from '../Pages/Loading/Loading';
 
 const Parts = ({ part }) => {
     const { _id, image, name, body, price, minimumQuantity, availableQuantity } = part;

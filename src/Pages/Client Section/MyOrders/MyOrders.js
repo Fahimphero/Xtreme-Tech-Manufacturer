@@ -72,7 +72,13 @@ const MyOrders = () => {
                             <td>{info?.name}</td>
                             <td>{info?.quantity}</td>
                             <td><button onClick={() => handleDelete(info?._id)} className='btn btn-danger py-1'>DELETE</button></td>
-                            <td><Link to={`/dashboard/payment/${info?._id}`}><button className='btn button text-light py-1'>PAY</button></Link></td>
+                            {
+                                info?.paid ?
+                                    <td>PAID <span style={{ color: 'royalblue' }}>TransactionId:</span> {info?.transactionId}</td>
+                                    :
+                                    <td><Link to={`/dashboard/payment/${info?._id}`}><button className='btn button text-light py-1'>PAY</button></Link></td>
+                            }
+
                         </tr>)
                     }
                     {/* <tr>

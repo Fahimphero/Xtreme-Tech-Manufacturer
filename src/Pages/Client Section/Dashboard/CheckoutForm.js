@@ -82,7 +82,7 @@ const CheckoutForm = ({ clientPart }) => {
 
             //store payment on database
             const payment = {
-                appointment: _id,
+                productId: _id,
                 transactionId: paymentIntent.id
             }
             fetch(`http://localhost:5000/clientparts/${_id}`, {

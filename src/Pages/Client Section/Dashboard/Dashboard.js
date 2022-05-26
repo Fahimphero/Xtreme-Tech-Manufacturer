@@ -30,7 +30,7 @@ const Dashboard = () => {
                 <div className='row'>
                     <div className='col col-lg-3'>
                         <div class="list-group mt-3">
-                            <Link to={`/dashboard/${email}`} class="list-group-item list-group-item-action active" aria-current="true">
+                            <Link to={`/dashboard`} class="list-group-item list-group-item-action active" aria-current="true">
                                 My Orders
                             </Link>
                             <Link to='/dashboard/addreviews' class="list-group-item list-group-item-action">

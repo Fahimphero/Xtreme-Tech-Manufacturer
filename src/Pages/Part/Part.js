@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Parts from '../../Parts/Parts';
+import Loading from '../Loading/Loading';
 
 const Part = () => {
     const [parts, setParts] = useState([]);
+
 
 
     useEffect(() => {
@@ -10,6 +12,11 @@ const Part = () => {
             .then(res => res.json())
             .then(data => setParts(data))
     }, [])
+
+    // if (parts.length == 0) {
+    //     return <Loading></Loading>
+    // }
+
     return (
         <div className="container mt-5">
             <div className=' text-light mb-5'>
