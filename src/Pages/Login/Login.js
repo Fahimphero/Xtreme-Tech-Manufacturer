@@ -9,6 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Security from '../../Images/Security.png';
 import './Login.css'
 import Loading from '../Loading/Loading';
+import useToken from '../Client Section/Hooks/useToken';
 
 
 const Login = () => {
@@ -31,6 +32,9 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+
+    const token = useToken(user || user1)
+
 
     if (user || user1) {
         navigate(from, { replace: true });

@@ -8,6 +8,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import auth from '../../firebase.init';
+import useToken from '../Client Section/Hooks/useToken';
 import './Signup.css'
 
 
@@ -28,6 +29,9 @@ const SignUp = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+
+
+    const token = useToken(user)
 
     if (user) {
         navigate(from, { replace: true });
