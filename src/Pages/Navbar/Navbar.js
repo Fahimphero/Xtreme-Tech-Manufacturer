@@ -49,7 +49,9 @@ const Navbar = () => {
                                 </li>
                         }
 
-
+                        <li className="nav-item">
+                            <Link to='/myportfolio' className="decoration fw-bold change pe-2" aria-current="page" >MyPortfolio</Link>
+                        </li>
 
                     </ul>
 

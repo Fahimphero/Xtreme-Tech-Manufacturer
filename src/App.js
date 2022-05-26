@@ -11,9 +11,11 @@ import RequireAuth from './Pages/RequireAuth/RequireAuth';
 import { ToastContainer } from 'react-toastify';
 import Dashboard from './Pages/Client Section/Dashboard/Dashboard';
 import MyOrders from './Pages/Client Section/MyOrders/MyOrders';
-import Reviews from './Pages/Bonus/Reviews/Reviews';
+
 import Profile from './Pages/Client Section/Profile/Profile';
 import Payment from '../src/Pages/Client Section/Payment/Payment';
+import AddReviews from './Pages/Client Section/AddReviews/AddReviews';
+import AboutMe from './Pages/AboutMe/AboutMe';
 
 
 
@@ -25,6 +27,7 @@ function App() {
       <Navbar></Navbar>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/myportfolio' element={<AboutMe></AboutMe>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
         <Route path='/purchase/:id' element={<RequireAuth><Purchase></Purchase></RequireAuth>}></Route>
@@ -35,10 +38,11 @@ function App() {
         </Route> */}
         <Route path='/dashboard' element={<Dashboard></Dashboard>}>
           <Route index element={<MyOrders></MyOrders>}></Route>
-          <Route path='addreviews' element={<Reviews></Reviews>}></Route>
+          <Route path='addreviews' element={<AddReviews></AddReviews>}></Route>
           <Route path='myprofile' element={<Profile></Profile>}></Route>
           <Route path='payment/:id' element={
             <Payment></Payment>}>
+
           </Route>
 
         </Route>
