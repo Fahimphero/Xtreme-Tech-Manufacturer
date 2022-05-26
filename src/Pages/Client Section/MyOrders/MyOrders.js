@@ -49,6 +49,7 @@ const MyOrders = () => {
     }
     return (
         <div>
+            <h3 className='m-0 mb-4  '>My Orders: {clientParts.length}</h3>
             <table class="table table-dark table-striped table-hover">
                 <thead>
                     <tr>
@@ -71,7 +72,7 @@ const MyOrders = () => {
                             <td>{info?.name}</td>
                             <td>{info?.quantity}</td>
                             <td><button onClick={() => handleDelete(info?._id)} className='btn btn-danger py-1'>DELETE</button></td>
-                            <td><Link to={`/dashboard/payment/${info?._id}`}><button className='btn btn-info py-1'>PAY</button></Link></td>
+                            <td><Link to={`/dashboard/payment/${info?._id}`}><button className='btn button text-light py-1'>PAY</button></Link></td>
                         </tr>)
                     }
                     {/* <tr>

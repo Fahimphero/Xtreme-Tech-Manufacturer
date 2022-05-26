@@ -31,39 +31,49 @@ const Purchase = () => {
         setQuantity(event.target.value)
         console.log(event.target.value)
     }
-
-
+    if (+quantity > +availableQuantity) {
+        toast.error(`You can not increase more than ${availableQuantity}`)
+    }
 
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
 
-
-
-
-
-
-        if (quantity > +availableQuantity) {
-            toast.error('You can not increase more')
+        if (+quantity > +availableQuantity) {
+            toast.error(`Please reset your quantity`)
         }
 
         else {
-            if (!quantity) {
-                setQuantity(primaryQuantity)
+            if (+quantity === 0) {
+
+                Object.assign(data, { quantity: minimumQuantity, name: name, price: price })
+                console.log(data)
+                axios.post('http://localhost:5000/clientparts', data)
+                    .then(function (response) {
+                        console.log(response);
+                        toast.success('Order Added Successfully')
+                    })
+
+                    .catch(function (error) {
+                        console.log(error);
+                    });
             }
-            Object.assign(data, { quantity: +quantity, name: name })
-            console.log(data)
-            axios.post('http://localhost:5000/clientparts', data)
-                .then(function (response) {
-                    console.log(response);
-                    toast('Added Successfully')
-                })
+            if (+quantity > 0) {
+                Object.assign(data, { quantity: +quantity, name: name, price: price })
+                console.log(data)
+                axios.post('http://localhost:5000/clientparts', data)
+                    .then(function (response) {
+                        console.log(response);
+                        toast.success('Order Added Successfully')
+                    })
 
-                .catch(function (error) {
-                    console.log(error);
-                });
+                    .catch(function (error) {
+                        console.log(error);
+                    });
+            }
         }
+    }
 
-    };
+
     return (
         <div className='bg-dark pb-5'>
             <div className='container text-black py-5'>

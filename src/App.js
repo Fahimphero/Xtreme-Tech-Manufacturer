@@ -35,7 +35,7 @@ function App() {
         </Route> */}
         <Route path='/dashboard' element={<Dashboard></Dashboard>}>
           <Route index element={<MyOrders></MyOrders>}></Route>
-          <Route path='reviews' element={<Reviews></Reviews>}></Route>
+          <Route path='addreviews' element={<Reviews></Reviews>}></Route>
           <Route path='myprofile' element={<Profile></Profile>}></Route>
           <Route path='payment/:id' element={
             <Payment></Payment>}>

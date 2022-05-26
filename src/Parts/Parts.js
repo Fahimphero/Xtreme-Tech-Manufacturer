@@ -28,7 +28,7 @@ const Parts = ({ part }) => {
                     <div className="col-md-7">
                         <div className="card-body">
                             <h5 className="card-title text-center fw-bold">{name}</h5>
-                            <p title={body} className="card-text">{body.slice(0, 80)}...</p>
+                            <p className="card-text">{body.slice(0, 80)}...</p>
 
                         </div>
                         <div className="row  card-body pt-0 pb-1">

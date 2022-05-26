@@ -1,21 +1,21 @@
-import React, { createContext } from 'react';
-import UseClientProducts from './Hooks/UseClientProducts';
-import MyOrders from './MyOrders/MyOrders';
+// import React, { createContext } from 'react';
+// import UseClientProducts from './Hooks/UseClientProducts';
+// import MyOrders from './MyOrders/MyOrders';
 
-// export const Ringcontext = createContext('ring')
+// // export const Ringcontext = createContext('ring')
 
-const ClientSection = (props) => {
+// const ClientSection = (props) => {
 
-    const products = 'Alu Alu';
-    console.log(props.clientParts)
+//     const products = 'Alu Alu';
+//     console.log(props.clientParts)
 
-    return (
-        // <Ringcontext.Provider value='ring alu'>
-        <div>
+//     return (
+//         // <Ringcontext.Provider value='ring alu'>
+//         <div>
 
-        </div>
-        // </Ringcontext.Provider>
-    );
-};
+//         </div>
+//         // </Ringcontext.Provider>
+//     );
+// };
 
-export default ClientSection;
+// export default ClientSection;
