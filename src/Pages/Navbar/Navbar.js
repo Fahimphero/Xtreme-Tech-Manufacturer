@@ -41,7 +41,7 @@ const Navbar = () => {
                         {
                             user ? <> <button style={{ border: '0' }} onClick={logout} className="change  w-100 d-flex align-items-center bg-secondary  fw-bold ps-0 pe-2" aria-current="page" >SignOut</button>
                                 <li className="nav-item">
-                                    <Link to={`/dashboard/${user.email}`} className="decoration fw-bold change pe-2 " aria-current="page" >Dashboard</Link>
+                                    <Link to='/dashboard ' className="decoration fw-bold change pe-2 " aria-current="page" >Dashboard</Link>
                                 </li>
                             </>
                                 : <li className="nav-item">

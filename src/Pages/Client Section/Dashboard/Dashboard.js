@@ -19,8 +19,8 @@ const Dashboard = () => {
     }, [])
 
     return (
-        <Ringcontext.Provider value={clientParts}>
-            <div className='bg-dark text-light'>
+        <Ringcontext.Provider value={email}>
+            <div className='bg-dark text-light ' style={{ height: '80vh' }}>
                 <div className='container'>
 
                     <div className='row'>

@@ -1,16 +1,33 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
-import { useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import auth from '../../../firebase.init';
 import { Ringcontext } from '../Dashboard/Dashboard';
 
 
 
 const MyOrders = () => {
-    const [services, setServices] = useState([])
-    const ring = useContext(Ringcontext)
-    console.log(ring)
+    const navigate = useNavigate();
+    // const ring = useContext(Ringcontext)
+    // console.log(ring)
+
+    const [user] = useAuthState(auth);
+
+    const [clientParts, setClientParts] = useState([]);
+
+    const url = `http://localhost:5000/clientparts/${user.email}`
+    useEffect(() => {
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setClientParts(data));
+
+    }, [])
 
     // console.log(clientParts)
+
+
+
 
     const handleDelete = (id) => {
         const proceed = window.confirm('Are you sure?');
@@ -23,8 +40,8 @@ const MyOrders = () => {
                 .then(res => res.json())
                 .then(data => {
                     console.log(data)
-                    const remaining = ring.filter(product => product._id !== id)
-                    setServices(remaining);
+                    const remaining = clientParts.filter(product => product._id !== id)
+                    setClientParts(remaining);
                 })
 
         }
@@ -36,7 +53,7 @@ const MyOrders = () => {
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Name</th>
+                        <th scope="col">User</th>
                         <th scope="col">Product Name</th>
                         <th scope="col">Quantity</th>
                         <th scope="col">Manage</th>
@@ -47,14 +64,14 @@ const MyOrders = () => {
                 <tbody>
 
                     {
-                        ring.map((info, index) => <tr>
+                        clientParts.map((info, index) => <tr>
 
                             <th scope="row">{index + 1}</th>
                             <td>{info?.user}</td>
                             <td>{info?.name}</td>
                             <td>{info?.quantity}</td>
                             <td><button onClick={() => handleDelete(info?._id)} className='btn btn-danger py-1'>DELETE</button></td>
-                            <td>{info?.paid}</td>
+                            <td><Link to={`/dashboard/payment/${info?._id}`}><button className='btn btn-info py-1'>PAY</button></Link></td>
                         </tr>)
                     }
                     {/* <tr>

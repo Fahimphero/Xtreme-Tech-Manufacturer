@@ -13,6 +13,8 @@ import Dashboard from './Pages/Client Section/Dashboard/Dashboard';
 import MyOrders from './Pages/Client Section/MyOrders/MyOrders';
 import Reviews from './Pages/Bonus/Reviews/Reviews';
 import Profile from './Pages/Client Section/Profile/Profile';
+import Payment from '../src/Pages/Client Section/Payment/Payment';
+
 
 
 
@@ -31,10 +33,13 @@ function App() {
           <Route path='review' element={<AddReview></AddReview>}></Route>
           <Route path='myprofile' element={<MyProfile></MyProfile>}></Route>
         </Route> */}
-        <Route path='/dashboard/:email' element={<Dashboard></Dashboard>}>
+        <Route path='/dashboard' element={<Dashboard></Dashboard>}>
           <Route index element={<MyOrders></MyOrders>}></Route>
           <Route path='reviews' element={<Reviews></Reviews>}></Route>
           <Route path='myprofile' element={<Profile></Profile>}></Route>
+          <Route path='payment/:id' element={
+            <Payment></Payment>}>
+          </Route>
 
         </Route>
       </Routes>
