@@ -12,7 +12,7 @@ const Payment = () => {
     const [clientPart, setClientPart] = useState({});
     console.log(clientPart);
     const { user, email, _id, body, price, name, quantity, phoneNumber } = clientPart
-    const url = `http://localhost:5000/clientpart/${id} `
+    const url = `https://shrouded-island-37601.herokuapp.com/clientpart/${id} `
 
     useEffect(() => {
         fetch(url)

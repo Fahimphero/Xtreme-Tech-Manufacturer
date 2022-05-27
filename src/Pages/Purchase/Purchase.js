@@ -13,7 +13,7 @@ const Purchase = () => {
     const [part, setPart] = useState({});
     const [quantity, setQuantity] = useState('');
 
-    const url = `http://localhost:5000/part/${id}`
+    const url = `https://shrouded-island-37601.herokuapp.com/part/${id}`
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -47,7 +47,7 @@ const Purchase = () => {
 
                 Object.assign(data, { quantity: minimumQuantity, name: name, price: price })
                 console.log(data)
-                axios.post('http://localhost:5000/clientparts', data)
+                axios.post('https://shrouded-island-37601.herokuapp.com/clientparts', data)
                     .then(function (response) {
                         console.log(response);
                         toast.success('Order Added Successfully')
@@ -60,7 +60,7 @@ const Purchase = () => {
             if (+quantity > 0) {
                 Object.assign(data, { quantity: +quantity, name: name, price: price })
                 console.log(data)
-                axios.post('http://localhost:5000/clientparts', data)
+                axios.post('https://shrouded-island-37601.herokuapp.com/clientparts', data)
                     .then(function (response) {
                         console.log(response);
                         toast.success('Order Added Successfully')

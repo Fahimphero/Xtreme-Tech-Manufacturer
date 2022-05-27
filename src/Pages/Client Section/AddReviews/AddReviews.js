@@ -9,7 +9,7 @@ const AddReviews = () => {
     const [user, loading, error] = useAuthState(auth);
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
-        axios.post('http://localhost:5000/clientreviews', data)
+        axios.post('https://shrouded-island-37601.herokuapp.com/clientreviews', data)
             .then(function (response) {
                 console.log(response);
                 toast.success('Review Added Successfully')

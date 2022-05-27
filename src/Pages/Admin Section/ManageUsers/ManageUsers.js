@@ -13,7 +13,7 @@ const ManageUsers = () => {
 
 
 
-        fetch(`http://localhost:5000/userinfo/admin/${admin?.email}`, {
+        fetch(`https://shrouded-island-37601.herokuapp.com/userinfo/admin/${admin?.email}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -42,12 +42,12 @@ const ManageUsers = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/users')
+        fetch('https://shrouded-island-37601.herokuapp.com/users')
             .then(res => res.json())
             .then(data => setUsers(data))
     }, [users])
 
-    // const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/users', {
+    // const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://shrouded-island-37601.herokuapp.com/users', {
     //     method: 'GET',
 
     // }).then(res => res.json()));

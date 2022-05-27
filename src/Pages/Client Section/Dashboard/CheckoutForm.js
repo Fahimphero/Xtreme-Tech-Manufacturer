@@ -14,7 +14,7 @@ const CheckoutForm = ({ clientPart }) => {
 
     useEffect(() => {
         if (price) {
-            fetch('http://localhost:5000/create-payment-intent', {
+            fetch('https://shrouded-island-37601.herokuapp.com/create-payment-intent', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -85,7 +85,7 @@ const CheckoutForm = ({ clientPart }) => {
                 productId: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`http://localhost:5000/clientparts/${_id}`, {
+            fetch(`https://shrouded-island-37601.herokuapp.com/clientparts/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

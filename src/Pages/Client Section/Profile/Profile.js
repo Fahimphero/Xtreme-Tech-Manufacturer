@@ -12,7 +12,7 @@ const Profile = () => {
     const onSubmit = data => {
         console.log(data)
 
-        const url = `http://localhost:5000/userinfo/${email}`
+        const url = `https://shrouded-island-37601.herokuapp.com/userinfo/${email}`
 
         fetch(url, {
             method: 'PUT',
