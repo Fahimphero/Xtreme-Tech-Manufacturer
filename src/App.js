@@ -16,6 +16,7 @@ import Profile from './Pages/Client Section/Profile/Profile';
 import Payment from '../src/Pages/Client Section/Payment/Payment';
 import AddReviews from './Pages/Client Section/AddReviews/AddReviews';
 import AboutMe from './Pages/AboutMe/AboutMe';
+import ManageUsers from './Pages/Admin Section/ManageUsers/ManageUsers';
 
 
 
@@ -42,9 +43,8 @@ function App() {
           <Route path='myprofile' element={<Profile></Profile>}></Route>
           <Route path='payment/:id' element={
             <Payment></Payment>}>
-
           </Route>
-
+          <Route path='manageusers' element={<ManageUsers></ManageUsers>}></Route>
         </Route>
       </Routes>
       <Footer></Footer>

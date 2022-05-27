@@ -1,11 +1,16 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, Outlet, useParams } from 'react-router-dom';
+import auth from '../../../firebase.init';
+import useAdmin from '../Hooks/useAdmin';
 
 
 
 // export const Ringcontext = createContext('ring')
 
 const Dashboard = () => {
+    const [user] = useAuthState(auth)
+    const [admin] = useAdmin(user)
     const { email } = useParams();
     const emailId = { email: email };
     // console.log(email)
@@ -21,6 +26,7 @@ const Dashboard = () => {
             .then(data => setClientParts(data));
 
     }, [])
+
 
     return (
         // <Ringcontext.Provider value={email}>
@@ -38,6 +44,9 @@ const Dashboard = () => {
                             </Link>
                             <Link to='/dashboard/myprofile' class="list-group-item list-group-item-action">
                                 My Profile
+                            </Link>
+                            <Link to='/dashboard/manageusers' class="list-group-item list-group-item-action">
+                                All Users
                             </Link>
                         </div>
                     </div>

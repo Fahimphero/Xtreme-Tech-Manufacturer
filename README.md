@@ -1,6 +1,13 @@
-# Getting Started with Create React App
+My website: [XTreme Tech](https://xtreme-tech.web.app/).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Main Features
+* Bootstrap added
+* Mongodb used as Database
+* NodeJs used as backend server
+* Google Firebase Authentication added
+* React Router added
+* React Firebase hooks added
+* Javascript library React is used to built this website
 
 ## Available Scripts
 
