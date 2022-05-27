@@ -19,7 +19,7 @@ const Parts = ({ part }) => {
 
     return (
 
-        <div className="col col-lg-4">
+        <div className="col-12 col-lg-4">
             <div className="card mb-3 hover-border" >
                 <div className="row g-0">
 

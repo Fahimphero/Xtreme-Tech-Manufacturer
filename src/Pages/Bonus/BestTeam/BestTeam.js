@@ -9,7 +9,7 @@ const BestTeam = () => {
             <h2 className='text-center fw-bold text-light text-uppercase py-3 '>Why <span style={{ color: 'royalblue' }}>Choose us</span></h2>
             {/* <h2 className='fw-bold text-light pt-3'>Get In Touch</h2> */}
             <div className='row'>
-                <div className='col col-lg-6'>
+                <div className='col-12 col-lg-6'>
                     <div className="accordion" id="accordionExample">
                         <div className="accordion-item">
                             <h2 className="accordion-header" id="headingOne">
@@ -53,7 +53,7 @@ const BestTeam = () => {
                         </div>
                     </div>
                 </div>
-                <div className='col col-lg-6'>
+                <div className='col-12 col-lg-6'>
                     <div id="carouselExampleControls" className="carousel slide bg-secondary " data-bs-ride="carousel">
                         <div className="carousel-inner">
                             <div className="carousel-item active">
