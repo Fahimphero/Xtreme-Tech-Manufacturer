@@ -7,7 +7,6 @@ import Loading from '../../Loading/Loading';
 const ManageUsers = () => {
     const [users, setUsers] = useState([]);
 
-
     const handleAdmin = (admin) => {
         console.log(admin)
 
@@ -20,19 +19,10 @@ const ManageUsers = () => {
             },
 
         })
-            .then(res => {
-                if (res.status === 403) {
-                    toast.error('Failed to make an Admin')
-                }
-                return res.json()
-
-            })
+            .then(res => res.json())
             .then(data => {
-                if (data.modifiedCount > 0) {
-                    console.log(data)
-                    toast.success('Successfully made an Admin')
-                }
-
+                console.log(data)
+                toast.success('Admin added successfully')
             })
 
     }
@@ -47,17 +37,11 @@ const ManageUsers = () => {
             .then(data => setUsers(data))
     }, [users])
 
-    // const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://shrouded-island-37601.herokuapp.com/users', {
-    //     method: 'GET',
 
-    // }).then(res => res.json()));
-    // if (isLoading) {
-    //     return <Loading></Loading>
-    // }
     return (
         <div>
             <div>
-                <h3 className='m-0 mb-4  '>My Orders: {users?.length}</h3>
+                <h3 className='m-0 mb-4  '>Total Users: {users?.length}</h3>
                 <table class="table table-dark table-striped table-hover">
                     <thead>
                         <tr>
@@ -73,7 +57,7 @@ const ManageUsers = () => {
                     <tbody>
 
                         {
-                            users.map((info, index) => <tr>
+                            users.map((info, index) => <tr key={info._id}>
 
                                 <th scope="row">{index + 1}</th>
                                 <td>{info?.userName}</td>

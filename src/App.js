@@ -17,6 +17,8 @@ import Payment from '../src/Pages/Client Section/Payment/Payment';
 import AddReviews from './Pages/Client Section/AddReviews/AddReviews';
 import AboutMe from './Pages/AboutMe/AboutMe';
 import ManageUsers from './Pages/Admin Section/ManageUsers/ManageUsers';
+import NotFound from './Pages/NotFound/NotFound';
+import Blogs from './Pages/Blogs/Blogs';
 
 
 
@@ -46,6 +48,8 @@ function App() {
           </Route>
           <Route path='manageusers' element={<ManageUsers></ManageUsers>}></Route>
         </Route>
+        <Route path='/blogs' element={<Blogs></Blogs>}></Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
       <ToastContainer />

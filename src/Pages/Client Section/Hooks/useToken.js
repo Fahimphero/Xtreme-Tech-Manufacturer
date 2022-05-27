@@ -8,6 +8,7 @@ const useToken = (user) => {
         const name = user?.user?.displayName;
 
         const currentUser = { email: email, user: name };
+        console.log(currentUser)
         if (email) {
             fetch(`https://shrouded-island-37601.herokuapp.com/userinfo/${email}`, {
                 method: 'PUT',

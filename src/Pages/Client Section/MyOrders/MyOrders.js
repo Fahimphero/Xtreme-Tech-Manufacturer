@@ -16,7 +16,7 @@ const MyOrders = () => {
 
     const [clientParts, setClientParts] = useState([]);
 
-    const url = `https://shrouded-island-37601.herokuapp.com/clientparts/${user.email}`
+    const url = `https://shrouded-island-37601.herokuapp.com/clientparts/${user?.email}`
     useEffect(() => {
         fetch(url)
             .then(res => res.json())

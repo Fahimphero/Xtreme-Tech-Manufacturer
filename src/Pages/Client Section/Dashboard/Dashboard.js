@@ -9,8 +9,8 @@ import useAdmin from '../Hooks/useAdmin';
 // export const Ringcontext = createContext('ring')
 
 const Dashboard = () => {
-    const [user] = useAuthState(auth)
-    const [admin] = useAdmin(user)
+    // const [user] = useAuthState(auth)
+    // const [admin] = useAdmin(user)
     const { email } = useParams();
     const emailId = { email: email };
     // console.log(email)

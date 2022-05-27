@@ -2,13 +2,14 @@ import { async } from '@firebase/util';
 import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { updateProfile } from 'firebase/auth';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import auth from '../../firebase.init';
 import useToken from '../Client Section/Hooks/useToken';
+import Loading from '../Loading/Loading';
 import './Signup.css'
 
 
@@ -22,7 +23,7 @@ const SignUp = () => {
 
     let from = location.state?.from?.pathname || "/";
 
-    const [updateProfile, updating] = useUpdateProfile(auth);
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
     const [
         createUserWithEmailAndPassword,
         user,
@@ -33,9 +34,19 @@ const SignUp = () => {
 
     const token = useToken(user)
 
-    if (user) {
-        navigate(from, { replace: true });
+    useEffect(() => {
+        if (user) {
+            navigate(from, { replace: true });
+        }
+    }, [user, from, navigate])
+
+
+    if (loading || updating) {
+        return <Loading></Loading>
     }
+
+
+
 
     const handleEmailSignUp = async (event) => {
         event.preventDefault();
@@ -43,7 +54,7 @@ const SignUp = () => {
         const email = event.target.email.value;
         const password = event.target.password.value;
         const displayName = event.target.userName.value;
-        // console.log(password)
+        console.log(displayName)
         const confirmPassword = event.target.confirmPassword.value;
         // console.log(confirmPassword)
         setUserEmail(email);
@@ -53,6 +64,7 @@ const SignUp = () => {
             await createUserWithEmailAndPassword(email, password);
             toast('Verification Email Sent')
             await updateProfile({ displayName: displayName });
+
 
         }
         else {
@@ -95,7 +107,7 @@ const SignUp = () => {
                             customError ? <p><span className='fs-5 fw-bold'><u>Error</u>  </span> {customError}</p> : ''
                         }
                         {
-                            !error ?
+                            !error || !updateError ?
                                 <p></p>
                                 :
                                 <div>

@@ -29,7 +29,7 @@ const Navbar = () => {
                     <div className='ms-auto fw-bold'>
                         {
                             user &&
-                            <p>Welcome <small className='text-light'>{user?.displayName}</small></p>
+                            <p>Welcome <small className='text-light'>{user.displayName}</small></p>
 
                         }
                     </div>
@@ -51,6 +51,9 @@ const Navbar = () => {
 
                         <li className="nav-item">
                             <Link to='/myportfolio' className="decoration fw-bold change pe-2" aria-current="page" >MyPortfolio</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link to='/blogs' className="decoration fw-bold change pe-2" aria-current="page" >Blogs</Link>
                         </li>
 
                     </ul>
