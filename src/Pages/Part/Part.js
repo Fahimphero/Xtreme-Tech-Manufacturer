@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Parts from '../../Parts/Parts';
 import Loading from '../Loading/Loading';
+import './Part.css'
 
 const Part = () => {
     const [parts, setParts] = useState([]);
@@ -19,9 +20,9 @@ const Part = () => {
 
     return (
         <div className="container mt-5">
-            <div className=' text-light mb-5'>
+            <div className=' text-light mb-4 marquee'>
                 <hr />
-                <h2 className='text-light text-center mb-4'>BEST OFFERS FROM <span style={{ color: 'royalblue' }} className='fw-bold'>XTreme Tech</span></h2>
+                <h2 className='text-light text-center mb-1 '>BEST OFFERS FROM <span style={{ color: 'royalblue' }} className='fw-bold'>XTreme Tech</span></h2>
                 <hr />
             </div>
             <div className="row gy-3">
