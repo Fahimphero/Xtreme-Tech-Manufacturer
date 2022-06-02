@@ -50,7 +50,7 @@ const MyOrders = () => {
     return (
         <div>
             <h3 className='m-0 mb-4  '>My Orders: {clientParts.length}</h3>
-            <table class="table table-dark table-striped table-hover">
+            <table className="table table-dark table-striped table-hover">
                 <thead>
                     <tr>
                         <th scope="col">#</th>

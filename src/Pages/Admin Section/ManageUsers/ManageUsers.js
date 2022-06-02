@@ -42,7 +42,7 @@ const ManageUsers = () => {
         <div>
             <div>
                 <h3 className='m-0 mb-4  '>Total Users: {users?.length}</h3>
-                <table class="table table-dark table-striped table-hover">
+                <table className="table table-dark table-striped table-hover">
                     <thead>
                         <tr>
                             <th scope="col">#</th>

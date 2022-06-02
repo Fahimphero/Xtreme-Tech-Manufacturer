@@ -25,18 +25,18 @@ const Payment = () => {
         <div className=''>
             {/* style="max-width: 18rem;" */}
             {/* <h2 className='text-light'>This is payment section</h2> */}
-            <div class="card text-dark bg-light mb-3" style={{ maxWidth: '25rem' }}>
-                <div class="card-header " style={{ color: 'royalblue' }} ><b>Hello,  {user}</b></div>
-                <div class="card-body">
-                    <h5 class="card-title pb-3 "><b>Please Pay For {name}</b></h5>
-                    <p class="card-text mb-0">Your Product Quantity: {quantity} </p>
-                    <p class="card-text "> Your Address: {body}. Your Phone Number: {phoneNumber}</p>
-                    <p class="card-text">Please pay <span className='text-danger'>${price}</span></p>
+            <div className="card text-dark bg-light mb-3" style={{ maxWidth: '25rem' }}>
+                <div className="card-header " style={{ color: 'royalblue' }} ><b>Hello,  {user}</b></div>
+                <div className="card-body">
+                    <h5 className="card-title pb-3 "><b>Please Pay For {name}</b></h5>
+                    <p className="card-text mb-0">Your Product Quantity: {quantity} </p>
+                    <p className="card-text "> Your Address: {body}. Your Phone Number: {phoneNumber}</p>
+                    <p className="card-text">Please pay <span className='text-danger'>${price}</span></p>
                 </div>
             </div>
-            <div class="card text-dark bg-light mb-3" style={{ maxWidth: '25rem' }}>
-                <div class="card-header">Header</div>
-                <div class="card-body">
+            <div className="card text-dark bg-light mb-3" style={{ maxWidth: '25rem' }}>
+                <div className="card-header">Header</div>
+                <div className="card-body">
                     <Elements stripe={stripePromise}>
                         <CheckoutForm clientPart={clientPart} />
                     </Elements>

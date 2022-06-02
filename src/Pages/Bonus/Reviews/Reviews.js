@@ -42,7 +42,7 @@ const Reviews = () => {
 
                     {
                         reviews.map(review =>
-                            <div className="carousel-item " style={{ minHeight: '18rem' }}>
+                            <div key={review._id} className="carousel-item " style={{ minHeight: '18rem' }}>
                                 <img src={review.image} className="d-block mx-auto rounded-pill p-1" style={{ border: "1px solid blue" }} alt="..." width="100" height="100" ></img>
                                 <h6 className='text-dark text-center pt-2'>{review.user}</h6>
                                 <h6 className='text-dark text-center pt-2'>Ratings  {review.quantity} Stars</h6>

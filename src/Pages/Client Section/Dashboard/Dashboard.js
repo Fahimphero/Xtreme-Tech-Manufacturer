@@ -35,17 +35,17 @@ const Dashboard = () => {
 
                 <div className='row'>
                     <div className='col col-lg-3'>
-                        <div class="list-group mt-3">
-                            <Link to={`/dashboard`} class="list-group-item list-group-item-action active" aria-current="true">
+                        <div className="list-group mt-3">
+                            <Link to={`/dashboard`} className="list-group-item list-group-item-action active" aria-current="true">
                                 My Orders
                             </Link>
-                            <Link to='/dashboard/addreviews' class="list-group-item list-group-item-action">
+                            <Link to='/dashboard/addreviews' className="list-group-item list-group-item-action">
                                 My Reviews
                             </Link>
-                            <Link to='/dashboard/myprofile' class="list-group-item list-group-item-action">
+                            <Link to='/dashboard/myprofile' className="list-group-item list-group-item-action">
                                 My Profile
                             </Link>
-                            <Link to='/dashboard/manageusers' class="list-group-item list-group-item-action">
+                            <Link to='/dashboard/manageusers' className="list-group-item list-group-item-action">
                                 All Users
                             </Link>
                         </div>
