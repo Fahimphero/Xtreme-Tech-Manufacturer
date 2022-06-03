@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from "react"
 
 const useAdmin = user => {
     const [admin, setAdmin] = useState(false);
@@ -10,6 +10,7 @@ const useAdmin = user => {
                 method: 'GET',
                 headers: {
                     'content-type': 'application/json',
+                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
                 }
             })
                 .then(res => res.json())
@@ -22,5 +23,4 @@ const useAdmin = user => {
 
     return [admin, adminLoading]
 }
-
 export default useAdmin;

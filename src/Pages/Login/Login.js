@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import auth from '../../firebase.init';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -33,12 +33,12 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
-    const token = useToken(user || user1)
+    const [token] = useToken(user || user1)
 
 
-    if (user || user1) {
-        navigate(from, { replace: true });
-    }
+    // if (user || user1) {
+    //     navigate(from, { replace: true });
+    // }
     const handleEmailLogin = (event) => {
         event.preventDefault();
         const email = event.target.email.value;
@@ -46,8 +46,15 @@ const Login = () => {
         setUserEmail(email);
         setUserPassword(password);
         signInWithEmailAndPassword(email, password);
-
     }
+
+
+    useEffect(() => {
+        if (token) {
+            navigate(from, { replace: true });
+        }
+    }, [token, from, navigate])
+
 
     if (loading || loading1) {
         // Element = <p className='text-dark'><span className='fs-5 fw-bold'>Loading... </span> </p>

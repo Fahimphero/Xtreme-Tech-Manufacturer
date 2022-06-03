@@ -19,6 +19,7 @@ import AboutMe from './Pages/AboutMe/AboutMe';
 import ManageUsers from './Pages/Admin Section/ManageUsers/ManageUsers';
 import NotFound from './Pages/NotFound/NotFound';
 import Blogs from './Pages/Blogs/Blogs';
+import RequireAdmin from './Pages/RequireAdmin/RequireAdmin';
 
 
 
@@ -46,7 +47,10 @@ function App() {
           <Route path='payment/:id' element={
             <Payment></Payment>}>
           </Route>
-          <Route path='manageusers' element={<ManageUsers></ManageUsers>}></Route>
+          <Route path='manageusers' element={<RequireAdmin>
+            <ManageUsers></ManageUsers>
+          </RequireAdmin>}>
+          </Route>
         </Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>

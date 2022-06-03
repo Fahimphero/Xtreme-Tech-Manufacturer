@@ -9,8 +9,8 @@ import useAdmin from '../Hooks/useAdmin';
 // export const Ringcontext = createContext('ring')
 
 const Dashboard = () => {
-    // const [user] = useAuthState(auth)
-    // const [admin] = useAdmin(user)
+    const [user] = useAuthState(auth)
+    const [admin] = useAdmin(user)
     const { email } = useParams();
     const emailId = { email: email };
     // console.log(email)
@@ -45,9 +45,9 @@ const Dashboard = () => {
                             <Link to='/dashboard/myprofile' className="list-group-item list-group-item-action">
                                 My Profile
                             </Link>
-                            <Link to='/dashboard/manageusers' className="list-group-item list-group-item-action">
+                            {admin && <Link to='/dashboard/manageusers' className="list-group-item list-group-item-action">
                                 All Users
-                            </Link>
+                            </Link>}
                         </div>
                     </div>
                     <div className='col col-lg-9'>

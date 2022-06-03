@@ -1,3 +1,4 @@
+import { signOut } from 'firebase/auth';
 import React, { useContext, useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 
@@ -18,11 +19,25 @@ const MyOrders = () => {
 
     const url = `https://shrouded-island-37601.herokuapp.com/clientparts/${user?.email}`
     useEffect(() => {
-        fetch(url)
-            .then(res => res.json())
-            .then(data => setClientParts(data));
-
-    }, [])
+        if (user) {
+            fetch(`https://shrouded-island-37601.herokuapp.com/clientparts/${user?.email}`, {
+                method: 'GET',
+                headers: {
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                }
+            })
+                .then(res => {
+                    console.log('res', res);
+                    if (res.status === 401 || res.status === 403) {
+                        signOut(auth);
+                        localStorage.removeItem('accessToken')
+                        navigate('/')
+                    }
+                    return res.json()
+                })
+                .then(data => { setClientParts(data) });
+        }
+    }, [user])
 
     // console.log(clientParts)
 
@@ -65,7 +80,7 @@ const MyOrders = () => {
                 <tbody>
 
                     {
-                        clientParts.map((info, index) => <tr>
+                        clientParts.map((info, index) => <tr key={info?._id}>
 
                             <th scope="row">{index + 1}</th>
                             <td>{info?.user}</td>

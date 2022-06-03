@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
 import { toast } from 'react-toastify';
+import auth from '../../../firebase.init';
 
 import Loading from '../../Loading/Loading';
 
 const ManageUsers = () => {
-    const [users, setUsers] = useState([]);
-
+    // const [users, setUsers] = useState([]);
+    const [user] = useAuthState(auth);
     const handleAdmin = (admin) => {
         console.log(admin)
 
@@ -15,27 +17,43 @@ const ManageUsers = () => {
         fetch(`https://shrouded-island-37601.herokuapp.com/userinfo/admin/${admin?.email}`, {
             method: 'PUT',
             headers: {
-                'content-type': 'application/json'
-            },
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            }
 
         })
-            .then(res => res.json())
+            .then(res => {
+                if (res.status === 403) {
+                    toast.error('Failed to make an admin')
+                }
+                return res.json()
+            })
             .then(data => {
-                console.log(data)
-                toast.success('Admin added successfully')
+                if (data.modifiedCount > 0) {
+                    refetch();
+                    toast.success('Admin added successfully')
+                }
             })
 
     }
 
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://shrouded-island-37601.herokuapp.com/users', {
+        method: 'GET',
+        headers: {
+            'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+        }
+    })
+        .then(res => res.json()));
+    if (isLoading) {
+        return <Loading></Loading>
+    }
 
 
 
-
-    useEffect(() => {
-        fetch('https://shrouded-island-37601.herokuapp.com/users')
-            .then(res => res.json())
-            .then(data => setUsers(data))
-    }, [users])
+    // useEffect(() => {
+    //     fetch('https://shrouded-island-37601.herokuapp.com/users')
+    //         .then(res => res.json())
+    //         .then(data => setUsers(data))
+    // }, [users])
 
 
     return (
@@ -66,7 +84,7 @@ const ManageUsers = () => {
                                     <td><button onClick={() => handleAdmin(info)} className='btn btn-secondary py-1'>Make Admin</button></td> :
                                     <td><button disabled className='btn btn-info py-1'>Admin</button></td>
                                 }
-                                <td><button className='btn btn-danger py-1'>DELETE</button></td>
+                                <td><button className='btn btn-danger py-1'>Remove</button></td>
 
 
 
