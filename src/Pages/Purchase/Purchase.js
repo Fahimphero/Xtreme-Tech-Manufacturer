@@ -12,6 +12,7 @@ const Purchase = () => {
     const [user, loading, error] = useAuthState(auth);
     const [part, setPart] = useState({});
     const [quantity, setQuantity] = useState('');
+    const [disabled, setDisabled] = useState(false);
 
     const url = `https://shrouded-island-37601.herokuapp.com/part/${id}`
     useEffect(() => {
@@ -25,20 +26,31 @@ const Purchase = () => {
 
     let primaryQuantity = minimumQuantity;
     console.log(primaryQuantity);
-
+    console.log(+quantity);
     const handleQuantity = (event) => {
-
+        console.log(this)
         setQuantity(event.target.value)
         console.log(event.target.value)
+        if (+quantity > +availableQuantity) {
+            setDisabled(true);
+
+        }
+        else if (+quantity < +minimumQuantity && +this !== 0) {
+            setDisabled(true);
+        }
     }
     if (+quantity > +availableQuantity) {
         toast.error(`You can not increase more than ${availableQuantity}`)
     }
 
+    if (+quantity < +minimumQuantity && +quantity !== 0) {
+        toast.error(`You can not decrease less than ${minimumQuantity}`)
+    }
+
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
 
-        if (+quantity > +availableQuantity) {
+        if (disabled === true) {
             toast.error(`Please reset your quantity`)
         }
 
@@ -131,14 +143,14 @@ const Purchase = () => {
 
                                 {/* <input typeof='number' placeholder='Quantity'{...register("quantity", { required: true })} /> */}
 
-                                {
+                                {/* {
                                     (quantity <= +availableQuantity) ? <input onChange={handleQuantity} type="number" defaultValue={minimumQuantity} name="restock" id="" /> :
                                         <input onChange={handleQuantity} typeof='number' disabled readOnly
                                             value={availableQuantity}
                                             step={availableQuantity} name="restock" id="" />
-                                }
+                                } */}
 
-
+                                <input onChange={handleQuantity} type="number" defaultValue={minimumQuantity} disabled={disabled} name="restock" id="" />
 
                                 <input className='text-light btn btn-dark' type="submit" value="Purchase" />
 
