@@ -1,14 +1,14 @@
 My website: [XTreme Tech](https://xtreme-tech.web.app/).
 
 # Main Features
-* Bootstrap added
-* Mongodb used as backend database
-* NodeJs used as backend server
-* Google Firebase authentication added
-* React Router added
-* React Firebase hooks added
-* React Stripe added
-* JWT token added
+* It’s a company’s manufacturer website that sells pc parts to dealers.
+* Users and Admin can sign up or log in to this website using google or email.
+* Only the admin has the power to make another user an admin.
+* Users can buy products using credit cards not exceeding the maximum quantity  
+  available and not less than the minimum quantity available.
+* Users can also give reviews and update their profiles.
+* Users can also reset their account password if they want to reset it.
+* An account verification email will be sent after a user creates an account.
 
 ## Available Scripts
 
