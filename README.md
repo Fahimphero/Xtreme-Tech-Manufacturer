@@ -2,12 +2,13 @@ My website: [XTreme Tech](https://xtreme-tech.web.app/).
 
 # Main Features
 * Bootstrap added
-* Mongodb used as Database
+* Mongodb used as backend database
 * NodeJs used as backend server
-* Google Firebase Authentication added
+* Google Firebase authentication added
 * React Router added
 * React Firebase hooks added
-* Javascript library React is used to built this website
+* React Stripe added
+* JWT token added
 
 ## Available Scripts
 
