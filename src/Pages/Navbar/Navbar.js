@@ -17,44 +17,48 @@ const Navbar = () => {
     console.log(user);
     return (
         <nav className="navbar sticky-top navbar-expand-lg navbar-secondary bg-secondary ">
-            <div className="container-fluid">
+            <div className="container">
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <a className="ps-5 navbar-brand" href=" ">
+                <a className=" navbar-brand" href=" ">
                     <img src={logo} alt="" width="30" height="24" className="d-inline-block align-text-top"></img>
                     <span className='text-light'> XTreme Tech</span>
                 </a>
 
                 <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
-                    <div className='ms-auto fw-bold'>
+                    <div className='ms-auto fw-bold text-center'>
                         {
                             user &&
                             <p>Welcome <small className='text-light'>{user.displayName}</small></p>
 
                         }
                     </div>
-                    <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <ul className="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
 
                         <li className="nav-item">
-                            <Link to='/' className="decoration fw-bold change pe-2" aria-current="page" >Home</Link>
+                            <Link to='/' className="decoration fw-bold change pe-3" aria-current="page" >Home</Link>
                         </li>
                         {
-                            user ? <> <button style={{ border: '0' }} onClick={logout} className="change  w-100 d-flex align-items-center bg-secondary  fw-bold ps-0 pe-2" aria-current="page" >SignOut</button>
+                            user ? <> <li className='nav-item'>
+
+                                <button style={{ border: '0', backgroundColor: 'inherit' }} onClick={logout} className="fw-bold change ps-0 pe-3 py-0" aria-current="page" >SignOut</button>
+
+                            </li>
                                 <li className="nav-item">
-                                    <Link to='/dashboard ' className="decoration fw-bold change pe-2 " aria-current="page" >Dashboard</Link>
+                                    <Link to='/dashboard ' className="decoration fw-bold change pe-3 " aria-current="page" >Dashboard</Link>
                                 </li>
                             </>
                                 : <li className="nav-item">
-                                    <Link to='/login' className="decoration fw-bold change pe-2 " aria-current="page" >LogIn</Link>
+                                    <Link to='/login' className="decoration fw-bold change pe-3 " aria-current="page" >LogIn</Link>
                                 </li>
                         }
 
                         <li className="nav-item">
-                            <Link to='/myportfolio' className="decoration fw-bold change pe-2" aria-current="page" >MyPortfolio</Link>
+                            <a href='https://irfanul-islam-fahim.netlify.app/' className="decoration fw-bold change pe-3" aria-current="page" >MyPortfolio</a>
                         </li>
                         <li className="nav-item">
-                            <Link to='/blogs' className="decoration fw-bold change pe-2" aria-current="page" >Blogs</Link>
+                            <Link to='/blogs' className="decoration fw-bold change pe-3" aria-current="page" >Blogs</Link>
                         </li>
 
                     </ul>
