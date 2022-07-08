@@ -31,13 +31,13 @@ const AddReviews = () => {
 
                     <input placeholder='User Image URL' {...register("image", { required: true })} />
 
-                    <input typeof='number' placeholder='Ratings'{...register("quantity", { required: true })} />
+                    <input type="number" placeholder='Ratings(Max: 5)'{...register("quantity", { min: 1, max: 5, required: true })} />
 
                     {/* 
                         <input placeholder='Car Name' {...register("Car Name", { required: true })} /> */}
 
 
-                    <textarea placeholder='Comments(Max-Length:150)' {...register("body", { required: true, maxLength: 150 })} cols="30" rows="5" />
+                    <textarea placeholder='Comments(Max-Length: 150)' {...register("body", { required: true, maxLength: 150 })} cols="30" rows="5" />
 
 
                     <input className='text-light btn btn-dark' type="submit" value="Add Review" />

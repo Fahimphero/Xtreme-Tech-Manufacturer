@@ -6,7 +6,7 @@ const Form = () => {
     return (
         <div className='container'>
             <div className='text-center mb-4'>
-                <h2 className='fw-bold text-light pt-3'><span style={{ color: 'royalblue' }}>Get</span> In <span style={{ color: 'royalblue' }}>Touch</span> </h2>
+                <h2 className='fw-bold text-light pt-5'><span style={{ color: 'royalblue' }}>Get</span> In <span style={{ color: 'royalblue' }}>Touch</span> </h2>
                 <p className='text-light'>To get every update please submit the form</p>
             </div>
             <div className="row">
