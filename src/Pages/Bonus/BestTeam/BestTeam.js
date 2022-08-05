@@ -1,12 +1,12 @@
 import React from 'react';
-import image1 from '../../../Images/About Us/1.jpg'
-import image2 from '../../../Images/About Us/2.jpg'
-import image3 from '../../../Images/About Us/3.jpg'
+import image1 from '../../../Images/About Us/1.webp'
+import image2 from '../../../Images/About Us/2.webp'
+import image3 from '../../../Images/About Us/3.webp'
 
 const BestTeam = () => {
     return (
         <div className='container py-5'>
-            <h2 className='text-center fw-bold text-light text-uppercase py-3 '>Why <span style={{ color: 'royalblue' }}>Choose Us?</span></h2>
+            <h2 className='text-center fw-bold text-light text-uppercase py-3 '>Why <span style={{ color: 'royalblue' }}>Choose Us ?</span></h2>
             {/* <h2 className='fw-bold text-light pt-3'>Get In Touch</h2> */}
             <div className='row'>
                 <div className='col-12 col-lg-6'>

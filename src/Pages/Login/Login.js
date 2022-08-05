@@ -4,9 +4,9 @@ import React, { useEffect, useState } from 'react';
 import auth from '../../firebase.init';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Security from '../../Images/Security.png';
+import Security from '../../Images/Security.webp';
 import './Login.css'
 import Loading from '../Loading/Loading';
 import useToken from '../Client Section/Hooks/useToken';

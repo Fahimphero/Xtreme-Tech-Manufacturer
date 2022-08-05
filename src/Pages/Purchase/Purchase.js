@@ -3,13 +3,13 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const Purchase = () => {
     const { id } = useParams();
     console.log(id)
-    const [user, loading, error] = useAuthState(auth);
+    const [user] = useAuthState(auth);
     const [part, setPart] = useState({});
     const [quantity, setQuantity] = useState('');
     const [disabled, setDisabled] = useState(false);
@@ -20,9 +20,9 @@ const Purchase = () => {
             .then(res => res.json())
             .then(data => setPart(data));
 
-    }, [])
+    }, [url])
 
-    const { _id, image, name, body, price, minimumQuantity, availableQuantity } = part;
+    const { image, name, body, price, minimumQuantity, availableQuantity } = part;
 
     let primaryQuantity = minimumQuantity;
     console.log(primaryQuantity);
@@ -87,16 +87,16 @@ const Purchase = () => {
 
 
     return (
-        <div className='bg-dark pb-5'>
+        <div className='bg-dark pb-1'>
             <div className='container text-black py-5'>
                 <div className='row'>
 
-                    <div className='col col-lg-6'>
+                    <div className='col col-lg-6 mb-4'>
 
                         <div className="card product-detail mx-auto" >
-                            <img src={image} className="card-img-top" alt="..."></img>
+
                             <div className="card-body">
-                                <h4 className="card-title fw-bold text-center">{name}</h4>
+                                <h2 className="card-title fw-bold text-center">{name}</h2>
                                 <div className="card-text">
                                     <p > {body}</p>
                                     <div className='d-flex justify-content-around'>
@@ -107,7 +107,7 @@ const Purchase = () => {
                                         </p>
                                     </div>
                                     <div>
-                                        <p className='text-center'> <strong className='fs-5'>Price:</strong> <span style={{ color: 'royalblue' }} className=' fw-bold fs-5'>${price}</span>
+                                        <p className='text-center'> <strong className='fs-5'>Price:</strong> <span style={{ color: 'blue' }} className=' fw-bold fs-5'>${price}</span>
                                         </p>
                                     </div>
                                     {/* <div className='d-flex justify-content-around align-items-center'>
@@ -117,6 +117,7 @@ const Purchase = () => {
                                 </div>
                                 {/* <a href="#" className="btn btn-primary">Go somewhere</a>  */}
                             </div>
+                            <img src={image} className="card-img-top  rounded-3" alt="..."></img>
                         </div>
 
                     </div>

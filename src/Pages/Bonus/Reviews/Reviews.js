@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Carousel } from 'react-bootstrap';
+
 import ReactStars from 'react-stars';
-import people1 from '../../../Images/People/People 1.png'
-import people2 from '../../../Images/People/People 2.png'
-import people3 from '../../../Images/People/People 3.png'
+import people1 from '../../../Images/People/People 1.webp'
+// import people2 from '../../../Images/People/People 2.webp'
+import people3 from '../../../Images/People/People 3.webp'
 
 
 
@@ -64,7 +64,7 @@ const Reviews = () => {
 
                                     </h6>
                                     <ReactStars
-                                        value={review.quantity}
+                                        value={parseFloat(review.quantity)}
                                         count={5}
                                         size={24}
                                         edit={false}

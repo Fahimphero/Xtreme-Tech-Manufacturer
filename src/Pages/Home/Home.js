@@ -1,8 +1,8 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
-import Banner1 from '../../Images/banner 1.png'
-import Banner2 from '../../Images/banner 2.jpg'
-import Banner3 from '../../Images/banner 3.png'
+import Banner1 from '../../Images/banner 1.webp'
+import Banner2 from '../../Images/banner 2.webp'
+import Banner3 from '../../Images/banner 3.webp'
 import Reviews from '../Bonus/Reviews/Reviews';
 import Summary from '../Bonus/Summary/Summary';
 import Form from '../Bonus/Form/Form';

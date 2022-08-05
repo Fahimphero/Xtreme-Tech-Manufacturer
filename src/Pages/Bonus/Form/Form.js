@@ -16,8 +16,8 @@ const Form = () => {
                 <div className="col-12 col-lg-6 ">
                     <form className='w-75 mx-auto p-3 rounded-3' style={{ border: '7px solid royalblue' }}>
                         <div className="mb-3 mt-3 ">
-                            <label className="form-label text-light">Your Name</label>
-                            <input type="text" className="form-control" id="" ></input>
+                            <label htmlFor="exampleInputName1" className="form-label text-light">Your Name</label>
+                            <input type="text" className="form-control" id="exampleInputName1" aria-describedby="nameHelp" ></input>
                         </div>
                         <div className="mb-3">
                             <label htmlFor="exampleInputEmail1" className="form-label text-light">Your Email</label>
