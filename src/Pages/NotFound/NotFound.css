@@ -1,0 +1,6 @@
+.back-img {
+    background-image: url('../../Images/NotFound.jpg');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
