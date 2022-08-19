@@ -6,7 +6,7 @@
 //     console.log(props.email)
 //     const [clientParts, setClientParts] = useState([])
 
-//     const url = `https://shrouded-island-37601.herokuapp.com/clientparts/${email}`
+//     const url = `https://salty-mountain-00629.herokuapp.com/clientparts/${email}`
 //     useEffect(() => {
 //         fetch(url)
 //             .then(res => res.json())

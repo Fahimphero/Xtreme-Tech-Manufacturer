@@ -10,7 +10,7 @@ const useToken = (user) => {
         const currentUser = { email: email, user: name };
         console.log(currentUser)
         if (email) {
-            fetch(`https://shrouded-island-37601.herokuapp.com/userbasicinfo/${email}`, {
+            fetch(`https://salty-mountain-00629.herokuapp.com/userbasicinfo/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'

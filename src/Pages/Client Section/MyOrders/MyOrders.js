@@ -17,10 +17,10 @@ const MyOrders = () => {
 
     const [clientParts, setClientParts] = useState([]);
 
-    const url = `https://shrouded-island-37601.herokuapp.com/clientparts/${user?.email}`
+    const url = `https://salty-mountain-00629.herokuapp.com/clientparts/${user?.email}`
     useEffect(() => {
         if (user) {
-            fetch(`https://shrouded-island-37601.herokuapp.com/clientparts/${user?.email}`, {
+            fetch(`https://salty-mountain-00629.herokuapp.com/clientparts/${user?.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -47,7 +47,7 @@ const MyOrders = () => {
     const handleDelete = (id) => {
         const proceed = window.confirm('Are you sure?');
         if (proceed) {
-            const url = `https://shrouded-island-37601.herokuapp.com/clientparts/${id} `
+            const url = `https://salty-mountain-00629.herokuapp.com/clientparts/${id} `
 
             fetch(url, {
                 method: 'DELETE'

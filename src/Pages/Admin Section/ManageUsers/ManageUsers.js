@@ -14,7 +14,7 @@ const ManageUsers = () => {
 
 
 
-        fetch(`https://shrouded-island-37601.herokuapp.com/userinfo/admin/${admin?.email}`, {
+        fetch(`https://salty-mountain-00629.herokuapp.com/userinfo/admin/${admin?.email}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -36,7 +36,7 @@ const ManageUsers = () => {
 
     }
 
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://shrouded-island-37601.herokuapp.com/users', {
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://salty-mountain-00629.herokuapp.com/users', {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -50,7 +50,7 @@ const ManageUsers = () => {
 
 
     // useEffect(() => {
-    //     fetch('https://shrouded-island-37601.herokuapp.com/users')
+    //     fetch('https://salty-mountain-00629.herokuapp.com/users')
     //         .then(res => res.json())
     //         .then(data => setUsers(data))
     // }, [users])

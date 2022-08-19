@@ -13,7 +13,7 @@ const Reviews = () => {
 
 
     useEffect(() => {
-        fetch('https://shrouded-island-37601.herokuapp.com/clientreviews')
+        fetch('https://salty-mountain-00629.herokuapp.com/clientreviews')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [])
