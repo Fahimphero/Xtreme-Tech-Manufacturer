@@ -16,7 +16,7 @@ const CheckoutForm = ({ clientPart }) => {
 
     useEffect(() => {
         if (price) {
-            fetch('https://salty-mountain-00629.herokuapp.com/create-payment-intent', {
+            fetch('https://xtreme-tech-manufacturer-server.onrender.com/create-payment-intent', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -89,7 +89,7 @@ const CheckoutForm = ({ clientPart }) => {
                 productId: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`https://salty-mountain-00629.herokuapp.com/clientparts/${_id}`, {
+            fetch(`https://xtreme-tech-manufacturer-server.onrender.com/clientparts/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

@@ -17,10 +17,10 @@ const MyOrders = () => {
 
     const [clientParts, setClientParts] = useState([]);
 
-    const url = `https://salty-mountain-00629.herokuapp.com/clientparts/${user?.email}`
+    const url = `https://xtreme-tech-manufacturer-server.onrender.com/clientparts/${user?.email}`
     useEffect(() => {
         if (user) {
-            fetch(`https://salty-mountain-00629.herokuapp.com/clientparts/${user?.email}`, {
+            fetch(`https://xtreme-tech-manufacturer-server.onrender.com/clientparts/${user?.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -47,7 +47,7 @@ const MyOrders = () => {
     const handleDelete = (id) => {
         const proceed = window.confirm('Are you sure?');
         if (proceed) {
-            const url = `https://salty-mountain-00629.herokuapp.com/clientparts/${id} `
+            const url = `https://xtreme-tech-manufacturer-server.onrender.com/clientparts/${id} `
 
             fetch(url, {
                 method: 'DELETE'

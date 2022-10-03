@@ -6,7 +6,7 @@
 //     console.log(props.email)
 //     const [clientParts, setClientParts] = useState([])
 
-//     const url = `https://salty-mountain-00629.herokuapp.com/clientparts/${email}`
+//     const url = `https://xtreme-tech-manufacturer-server.onrender.com/clientparts/${email}`
 //     useEffect(() => {
 //         fetch(url)
 //             .then(res => res.json())

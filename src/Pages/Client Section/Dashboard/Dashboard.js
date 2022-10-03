@@ -19,7 +19,7 @@ const Dashboard = () => {
 
     const [clientParts, setClientParts] = useState([]);
 
-    const url = `https://salty-mountain-00629.herokuapp.com/clientparts/${emailId.email}`
+    const url = `https://xtreme-tech-manufacturer-server.onrender.com/clientparts/${emailId.email}`
     useEffect(() => {
         fetch(url)
             .then(res => res.json())

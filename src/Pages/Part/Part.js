@@ -9,7 +9,7 @@ const Part = () => {
 
 
     useEffect(() => {
-        fetch('https://salty-mountain-00629.herokuapp.com/part')
+        fetch('https://xtreme-tech-manufacturer-server.onrender.com/part')
             .then(res => res.json())
             .then(data => setParts(data))
     }, [])

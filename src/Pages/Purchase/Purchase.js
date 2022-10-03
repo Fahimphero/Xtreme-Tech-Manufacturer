@@ -14,7 +14,7 @@ const Purchase = () => {
     const [quantity, setQuantity] = useState('');
     const [disabled, setDisabled] = useState(false);
 
-    const url = `https://salty-mountain-00629.herokuapp.com/part/${id}`
+    const url = `https://xtreme-tech-manufacturer-server.onrender.com/part/${id}`
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -59,7 +59,7 @@ const Purchase = () => {
 
                 Object.assign(data, { quantity: minimumQuantity, name: name, price: price })
                 console.log(data)
-                axios.post('https://salty-mountain-00629.herokuapp.com/clientparts', data)
+                axios.post('https://xtreme-tech-manufacturer-server.onrender.com/clientparts', data)
                     .then(function (response) {
                         console.log(response);
                         toast.success('Order Added Successfully')
@@ -72,7 +72,7 @@ const Purchase = () => {
             if (+quantity > 0) {
                 Object.assign(data, { quantity: +quantity, name: name, price: price })
                 console.log(data)
-                axios.post('https://salty-mountain-00629.herokuapp.com/clientparts', data)
+                axios.post('https://xtreme-tech-manufacturer-server.onrender.com/clientparts', data)
                     .then(function (response) {
                         console.log(response);
                         toast.success('Order Added Successfully')

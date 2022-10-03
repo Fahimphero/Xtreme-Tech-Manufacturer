@@ -12,7 +12,7 @@ const Profile = () => {
     const onSubmit = data => {
         console.log(data)
 
-        const url = `https://salty-mountain-00629.herokuapp.com/userinfo/${email}`
+        const url = `https://xtreme-tech-manufacturer-server.onrender.com/userinfo/${email}`
 
         fetch(url, {
             method: 'PUT',
