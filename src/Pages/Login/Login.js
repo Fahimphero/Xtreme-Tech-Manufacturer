@@ -10,6 +10,7 @@ import Security from '../../Images/Security.webp';
 import './Login.css'
 import Loading from '../Loading/Loading';
 import useToken from '../Client Section/Hooks/useToken';
+import Google from '../../Images/google.png'
 
 
 const Login = () => {
@@ -108,9 +109,9 @@ const Login = () => {
 
                             </form>
                             <div className='pb-4 px-4 pt-2'>
-                                <button onClick={() => signInWithGoogle()} className="btn btn-dark mt-2 w-100 py-2">Sign In Using Google</button>
+                                <button onClick={() => signInWithGoogle()} className="btn btn-dark mt-2 w-100 py-2 "><img src={Google} alt="" /> Sign In Using Google</button>
                                 <hr />
-                                <button onClick={navigateToSignUp} type='submit' className="hover   text-dark mt-2 w-100 py-2  ">Create a new account</button>
+                                <button onClick={navigateToSignUp} type='submit' className="hover   text-dark fw-bold mt-2 w-100 py-2  ">Create a new account</button>
                             </div>
 
                         </div>

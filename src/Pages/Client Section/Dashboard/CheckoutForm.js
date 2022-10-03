@@ -1,5 +1,7 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
+import gif from './../../../Images/Spinner-1s-104px (2).svg'
 
 const CheckoutForm = ({ clientPart }) => {
     const stripe = useStripe();
@@ -57,6 +59,7 @@ const CheckoutForm = ({ clientPart }) => {
         setCardError(error?.message || '');
         setSuccess('')
         // confirm card payment
+        setProcessing(true);
         const { paymentIntent, error: intentError } = await stripe.confirmCardPayment(
             clientSecret,
             {
@@ -78,6 +81,7 @@ const CheckoutForm = ({ clientPart }) => {
             setCardError('');
             setTransactionId(paymentIntent.id);
             console.log(paymentIntent);
+            toast.success(`Congrats! Your Payment is completed`);
             setSuccess('Congrats! Your payment is completed.')
 
             //store payment on database
@@ -128,11 +132,15 @@ const CheckoutForm = ({ clientPart }) => {
                 </button>
             </form>
 
+            {processing && (
+                <div className="d-flex justify-content-center"><img src={gif} alt="" /></div>
+
+            )}
             {
                 cardError && <p className='text-danger mt-2'>{cardError}</p>
             }
             {
-                success && <div className=' mt-2' style={{ color: 'royalblue' }}>
+                success && <div className=' mt-2' >
                     <p>{success}  </p>
                     <p>Your transaction Id: <span className="text-primary font-bold">{transactionId}</span> </p>
                 </div>
