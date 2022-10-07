@@ -9,6 +9,26 @@ import Loading from '../../Loading/Loading';
 const ManageUsers = () => {
     // const [users, setUsers] = useState([]);
     const [user] = useAuthState(auth);
+
+    const handleRemove = (info) => {
+        console.log(info)
+        const proceed = window.confirm('Are you sure?');
+        if (proceed) {
+            const url = `https://xtreme-tech-manufacturer-server.onrender.com/users/${info._id} `
+            console.log(url)
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    refetch();
+                    toast.success('User removed successfully')
+                })
+
+        }
+    }
+
     const handleAdmin = (admin) => {
         console.log(admin)
 
@@ -84,10 +104,7 @@ const ManageUsers = () => {
                                     <td><button onClick={() => handleAdmin(info)} className='btn btn-secondary py-1'>Make Admin</button></td> :
                                     <td><button disabled className='btn btn-info py-1'>Admin</button></td>
                                 }
-                                <td><button className='btn btn-danger py-1'>Remove</button></td>
-
-
-
+                                <td><button onClick={() => handleRemove(info)} className='btn btn-danger py-1'>Remove</button></td>
                             </tr>)
                         }
 
