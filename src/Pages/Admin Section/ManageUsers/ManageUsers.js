@@ -17,7 +17,10 @@ const ManageUsers = () => {
             const url = `https://xtreme-tech-manufacturer-server.onrender.com/users/${info._id} `
             console.log(url)
             fetch(url, {
-                method: 'DELETE'
+                method: 'DELETE',
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                }
             })
                 .then(res => res.json())
                 .then(data => {
