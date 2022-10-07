@@ -14,15 +14,15 @@ const Part = () => {
             .then(data => setParts(data))
     }, [])
 
-    if (parts.length == 0) {
+    if (parts.length === 0) {
         return <Loading></Loading>
     }
 
     return (
-        <div className="container mt-5">
+        <div id='products' className="container mt-5">
             <div className=' text-light mb-4 marquee'>
                 <hr />
-                <h2 className='text-light text-center mb-1 '>BEST OFFERS FROM <span style={{ color: 'royalblue' }} className='fw-bold'>XTreme Tech</span></h2>
+                <h2 style={{ wordSpacing: '5px' }} className='text-light text-center mb-1 '>BEST OFFERS FROM <span style={{ color: 'royalblue' }} className='fw-bold'>XTreme Tech</span></h2>
                 <hr />
             </div>
             <div className="row gy-3">

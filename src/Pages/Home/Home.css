@@ -1,3 +1,39 @@
 .banner-img {
     height: 80vh;
 }
+
+.background-1 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.900), rgba(0, 0, 0, 0.092)), url(../../Images/banner\ 3.webp);
+    height: 95vh;
+
+
+    /* color:transparent; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.background-3 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.900), rgba(0, 0, 0, 0.092)), url(../../Images/banner\ 2.webp);
+    height: 95vh;
+
+
+    /* color:transparent; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.background-2 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.900), rgba(0, 0, 0, 0.200)), url(../../Images/banner\ 1.webp);
+    height: 95vh;
+
+
+    /* color:transparent; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}

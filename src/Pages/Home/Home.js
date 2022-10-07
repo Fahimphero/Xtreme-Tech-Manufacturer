@@ -1,5 +1,5 @@
 import React from 'react';
-import { Carousel } from 'react-bootstrap';
+import { Carousel, Nav } from 'react-bootstrap';
 import Banner1 from '../../Images/banner 1.webp'
 import Banner2 from '../../Images/banner 2.webp'
 import Banner3 from '../../Images/banner 3.webp'
@@ -10,45 +10,58 @@ import Part from '../Part/Part';
 
 import './Home.css'
 import BestTeam from '../Bonus/BestTeam/BestTeam';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
+
     return (
         <div className='bg-dark'>
             <Carousel fade>
-                <Carousel.Item>
-                    <img
+                <Carousel.Item className='background-1'>
+                    {/* <img
                         className="d-block w-100 banner-img"
                         src={Banner3}
                         alt="First slide"
-                    />
-                    {/* <Carousel.Caption>
-                    <h3>First slide label</h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                </Carousel.Caption> */}
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img
-                        className="d-block w-100 banner-img"
-                        src={Banner1}
-                        alt="Second slide"
-                    />
+                    /> */}
+                    <Carousel.Caption style={{ position: 'absolute', top: '50%', transform: 'translateY(-60%)' }}>
 
-                    {/* <Carousel.Caption>
-                    <h3>Second slide label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </Carousel.Caption> */}
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img
-                        className="d-block w-100 banner-img"
-                        src={Banner2}
-                        alt="Third slide"
-                    />
+                        <h1 className='text-left fw-bold' style={{ fontFamily: 'Poppins sans-serif', fontSize: '4.5vw', wordSpacing: '5px' }} >Together We Shape The Future of Technology</h1>
+                        <Nav.Link href='#products'>
+                            <button style={{ fontFamily: 'Poppins sans-serif' }} className='btn px-4 button text-light py-2'>SEE  PRODUCTS</button>
+                        </Nav.Link>
 
-                    {/* <Carousel.Caption>
-                    <h3>Third slide label</h3>
-                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                </Carousel.Caption> */}
+
+                    </Carousel.Caption>
+
+                </Carousel.Item>
+
+
+                <Carousel.Item className='background-2'>
+
+
+                    <Carousel.Caption style={{ position: 'absolute', top: '50%', transform: 'translateY(-60%)' }}>
+
+                        <h1 className='text-left fw-bold' style={{ fontFamily: 'Poppins sans-serif', fontSize: '4.5vw', wordSpacing: '5px' }} >Together We Shape The Future of Technology</h1>
+                        <Nav.Link href='#products'>
+                            <button style={{ fontFamily: 'Poppins sans-serif' }} className='btn px-4 button text-light py-2'>SEE PRODUCTS</button>
+                        </Nav.Link>
+
+
+                    </Carousel.Caption>
+                </Carousel.Item>
+
+                <Carousel.Item className='background-3'>
+
+
+                    <Carousel.Caption style={{ position: 'absolute', top: '50%', transform: 'translateY(-60%)' }}>
+
+                        <h1 className='text-left fw-bold' style={{ fontFamily: 'Poppins sans-serif', fontSize: '4.5vw', wordSpacing: '5px' }} >Together We Shape The Future of Technology</h1>
+                        <Nav.Link href='#products'>
+                            <button style={{ fontFamily: 'Poppins sans-serif' }} className='btn px-4 button text-light py-2'>SEE PRODUCTS</button>
+                        </Nav.Link>
+
+
+                    </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
 
@@ -65,3 +78,6 @@ const Home = () => {
 };
 
 export default Home;
+
+
+
