@@ -1,5 +1,5 @@
 import React from 'react';
-import image from '../../../Images/contact-img.png'
+import image from '../../../Images/Contact-Us.png'
 import './Form.css'
 
 const Form = () => {
@@ -10,7 +10,7 @@ const Form = () => {
                 <p className='text-light'>To get every update please submit the form</p>
             </div>
             <div className="row">
-                <div className="col-12 col-lg-6  rounded-3 p-3 mx-auto">
+                <div className="col-12 col-lg-6  rounded-3  mx-auto">
                     <img className='img-fluid' src={image} alt="" />
                 </div>
                 <div className="col-12 col-lg-6 ">
