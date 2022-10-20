@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowCircleLeft } from '@fortawesome/free-solid-svg-icons';
 import './NotFound.css'
 
 const NotFound = () => {
@@ -16,7 +18,7 @@ const NotFound = () => {
                             <h1 style={{ fontFamily: "ui-sans-serif,system-ui,-apple-system", fontWeight: '900' }} className="pb-4">Looks like you've found the doorway to the great nothing</h1>
                             <p className="py-2">The content you’re looking for doesn’t exist. Either it was removed, or you mistyped the link.</p>
                             <p className="py-2">Sorry about that! Please visit our hompage to get where you need to go.</p>
-                            <Link to='/'><button className="btn btn-primary mb-4">Go back to Homepage</button></Link>
+                            <Link to='/'><button className="btn btn-primary mb-4"><FontAwesomeIcon icon={faArrowCircleLeft}></FontAwesomeIcon>  Go back to Homepage</button></Link>
                         </div>
                     </div>
                 </div>
