@@ -6,6 +6,8 @@ import CustomLink from '../../CustomLink/CustomLink';
 import auth from '../../firebase.init';
 import logo from '../../Images/logo.png'
 import './Navbar.css'
+import defaultUser from '../../Images/profile-pic.png'
+
 
 const Navbar = () => {
 
@@ -58,6 +60,12 @@ const Navbar = () => {
                                         <CustomLink to='/dashboard ' className="decoration fw-bold change px-3 py-2 rounded-3" aria-current="page" >Dashboard</CustomLink>
                                     </li>
 
+
+                                    <li className='nav-item d-flex align-items-center justify-content-center'>
+                                        <img className='profile-pic' src={user.photoURL ? user.photoURL : defaultUser} alt="" />
+
+                                    </li>
+
                                     <li className='nav-item  py-2'>
 
                                         <button style={{ border: '0', backgroundColor: 'inherit' }} onClick={logout} className="fw-bold change  px-3 py-0" aria-current="page" >SignOut</button>
@@ -69,11 +77,6 @@ const Navbar = () => {
                                         <CustomLink to='/login' className="decoration fw-bold change px-3 py-2 rounded-3" aria-current="page" >LogIn</CustomLink>
                                     </li>
                             }
-
-
-
-
-
 
                         </ul>
 

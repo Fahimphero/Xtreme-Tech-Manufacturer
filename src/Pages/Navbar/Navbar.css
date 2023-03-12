@@ -11,3 +11,10 @@
 .change {
     color: black;
 }
+
+
+.profile-pic {
+    width: 35px;
+    padding: 0px;
+    border-radius: 25px;
+}
