@@ -42,20 +42,7 @@ const Navbar = () => {
                             <li className="nav-item  py-2">
                                 <CustomLink to='/' className="decoration fw-bold change px-3 py-2 rounded-3" aria-current="page" >Home</CustomLink>
                             </li>
-                            {
-                                user ? <> <li className='nav-item  py-2'>
 
-                                    <button style={{ border: '0', backgroundColor: 'inherit' }} onClick={logout} className="fw-bold change  px-3 py-0" aria-current="page" >SignOut</button>
-
-                                </li>
-                                    <li className="nav-item  py-2">
-                                        <CustomLink to='/dashboard ' className="decoration fw-bold change px-3 py-2 rounded-3" aria-current="page" >Dashboard</CustomLink>
-                                    </li>
-                                </>
-                                    : <li className="nav-item  py-2">
-                                        <CustomLink to='/login' className="decoration fw-bold change px-3 py-2 rounded-3" aria-current="page" >LogIn</CustomLink>
-                                    </li>
-                            }
 
                             <li className="nav-item py-2">
                                 <a href='https://irfanul-islam-fahim.netlify.app/' className="decoration fw-bold change px-3 py-2" aria-current="page" >MyPortfolio</a>
@@ -63,6 +50,30 @@ const Navbar = () => {
                             <li className="nav-item py-2">
                                 <CustomLink to='/blogs' className="decoration fw-bold change px-3 py-2 rounded-3" aria-current="page" >Blogs</CustomLink>
                             </li>
+
+                            {
+                                user ? <>
+
+                                    <li className="nav-item  py-2">
+                                        <CustomLink to='/dashboard ' className="decoration fw-bold change px-3 py-2 rounded-3" aria-current="page" >Dashboard</CustomLink>
+                                    </li>
+
+                                    <li className='nav-item  py-2'>
+
+                                        <button style={{ border: '0', backgroundColor: 'inherit' }} onClick={logout} className="fw-bold change  px-3 py-0" aria-current="page" >SignOut</button>
+
+                                    </li>
+
+                                </>
+                                    : <li className="nav-item  py-2">
+                                        <CustomLink to='/login' className="decoration fw-bold change px-3 py-2 rounded-3" aria-current="page" >LogIn</CustomLink>
+                                    </li>
+                            }
+
+
+
+
+
 
                         </ul>
 
