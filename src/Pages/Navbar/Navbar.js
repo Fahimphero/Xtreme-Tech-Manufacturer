@@ -47,7 +47,7 @@ const Navbar = () => {
 
 
                             <li className="nav-item py-2">
-                                <a href='https://irfanul-islam-fahim.netlify.app/' className="decoration fw-bold change px-3 py-2" aria-current="page" >MyPortfolio</a>
+                                <a href='https://irfanulislam-fahim.netlify.app/' className="decoration fw-bold change px-3 py-2" aria-current="page" >MyPortfolio</a>
                             </li>
                             <li className="nav-item py-2">
                                 <CustomLink to='/blogs' className="decoration fw-bold change px-3 py-2 rounded-3" aria-current="page" >Blogs</CustomLink>
